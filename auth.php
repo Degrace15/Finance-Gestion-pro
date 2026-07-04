@@ -5,8 +5,8 @@ require_once 'config.php';
 // ==========================================================
 // CONFIGURATION DES CLÉS GOOGLE RECAPTCHA
 // ==========================================================
-$siteKey   = "6LdDsM0sAAAAAJU7z0KAzTsomqNsA2D9OF3WawbU";
-$secretKey = "6LdDsM0sAAAAABi02BOW15AfUJVjuSvhdh6lqdqn";
+$siteKey   = "Ici";
+$secretKey = "Ici";
 // ==========================================================
 
 $pays_fr = [

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pas de connexion | Finance & Gestion Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .loader-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .dots-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.4s ease-in-out infinite both;
+        }
+
+        body.en-ligne .dot {
+            background-color: #007bff;
+        }
+
+        body.hors-ligne .dot {
+            background-color: #cccccc;
+        }
+
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+        .dot:nth-child(3) { animation-delay: 0s; }
+
+        @keyframes pulse {
+            0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+            40%            { transform: scale(1.0); opacity: 1; }
+        }
+
+        .loading-text {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        body.en-ligne .loading-text {
+            color: #007bff;
+        }
+
+        body.hors-ligne .loading-text {
+            color: #e74c3c;
+        }
+
+        .wifi-icon {
+            font-size: 40px;
+        }
+
+        body.en-ligne .wifi-icon {
+            display: none;
+        }
+
+        body.hors-ligne .wifi-icon {
+            display: block;
+        }
+    </style>
+</head>
+<body class="hors-ligne">
+
+    <div class="loader-wrapper">
+
+        <div class="logo">Finance & Gestion Pro</div>
+
+        <div class="wifi-icon">📵</div>
+
+        <div class="dots-container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="loading-text" id="status-text">
+            Pas de connexion internet...
+        </div>
+
+    </div>
+
+<script>
+    const body       = document.body;
+    const statusText = document.getElementById('status-text');
+
+    function mettreAJourEtat() {
+        if(navigator.onLine) {
+            body.classList.remove('hors-ligne');
+            body.classList.add('en-ligne');
+            statusText.textContent = 'Connexion rétablie...';
+
+            const pageAvant = localStorage.getItem('page_avant');
+
+            setTimeout(() => {
+                localStorage.removeItem('page_avant');
+
+                // Redirige directement SANS passer par index.html
+                if(pageAvant && 
+                   pageAvant.indexOf('offline.html') === -1 && 
+                   pageAvant.indexOf('index.html') === -1) {
+                    window.location.replace(pageAvant);
+                } else {
+                    window.location.replace('auth.php');
+                }
+            }, 1000);
+
+        } else {
+            body.classList.remove('en-ligne');
+            body.classList.add('hors-ligne');
+            statusText.textContent = 'Pas de connexion internet...';
+        }
+    }
+
+    mettreAJourEtat();
+    window.addEventListener('online',  mettreAJourEtat);
+    window.addEventListener('offline', mettreAJourEtat);
+    setInterval(mettreAJourEtat, 2000);
+</script>
+
+</body>
+</html>

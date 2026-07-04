@@ -1,0 +1,150 @@
+/* ==========================================================================
+   1. LA BASE GLOBALE (Balises Générales)
+   ========================================================================== */
+body {
+    background-color: #0B1F3A; /* Mon Bleu de nuit très sombre */
+    color: #ffffff;            /* Texte principal en blanc pur */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. LE CONTENEUR PRINCIPAL (La Structure Structurelle)
+   ========================================================================== */
+main, .notifications-panel {
+    max-width: 1200px;       /* Largeur maximale sur PC */
+    margin: 40px auto;       /* Centre le bloc sur l'écran et met de l'espace en haut/bas */
+    padding: 0 20px;         /* Empêche le texte de coller aux bords sur Smartphone */
+}
+
+/* ==========================================================================
+   3. LES TITRES ET ENTÊTES (La Hiérarchie Visuelle)
+   ========================================================================== */
+/* Le titre principal de la page */
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+    font-size: 32px;
+    font-weight: 100;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+/* Le sous-titre explicatif (le paragraphe sous le H2) */
+h2 + p, .page-subtitle {
+    color: #a0aec0;          /* Gris clair texturé pour ne pas fatiguer les yeux */
+    font-size: 16px;
+    margin-bottom: 40px;      /* Grand espace avant de commencer la liste des cartes */
+    font-weight: 300;
+}
+
+/* Le titre à l'intérieur de chaque carte */
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;     /* Espace avant le texte de description */
+}
+
+/* ==========================================================================
+   4. LES CARTES DE NOTIFICATION (Les Blocs Répétés du Foreach)
+   ========================================================================== */
+.announcement-card {
+    background-color: rgba(255, 255, 255, 0.02); /* Fond translucide légèrement plus clair */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Bordure très fine et discrète */
+    border-radius: 16px;                         /* Coins arrondis modernes */
+    padding: 30px;                               /* Marge interne pour faire respirer le contenu */
+    margin-bottom: 24px;                         /* Espace entre chaque notification */
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Effet interactif quand on passe la souris ou qu'on clique sur la carte */
+.announcement-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 212, 255, 0.2);       /* Devient légèrement bleuté au survol */
+}
+
+/* ==========================================================================
+   5. LES DÉTAILS À L'INTÉRIEUR D'UNE CARTE (L'Affichage)
+   ========================================================================== */
+
+/* L'en-tête de la carte (contient le badge et la date alignés) */
+.announcement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Le badge "NOUVEAU" */
+.badge {
+    background-color: #00d4ff;   /* Ton Bleu Néon technologique */
+    color: #000000;              /* Texte noir pour un contraste maximal et lisible */
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;         /* Badge style pilule */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* La date de publication */
+.date {
+    color: #718096;              /* Gris plus sombre pour la discrétion */
+    font-size: 14px;
+}
+
+/* Le paragraphe de description dans la carte */
+.announcement-card p {
+    color: #a0aec0;              /* Même gris clair atténué que le sous-titre */
+    font-size: 15px;
+    margin-bottom: 24px;         /* Espace avant le bouton d'installation */
+    font-weight: 300;
+}
+
+/* Le bouton d'installation (la balise <a> transformée) */
+.btn-install {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;                   /* Espace entre l'icône de téléchargement et le texte */
+    background-color: #00d4ff;   /* Fond Bleu Néon */
+    color: #000000;              /* Texte noir */
+    text-decoration: none;       /* Enlève le soulignement par défaut des liens */
+    padding: 12px 12px;
+    border-radius: 8px;         /* Coins légèrement arrondis pour le bouton */
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet sur le bouton au clic ou survol */
+.btn-install:hover {
+    background-color: #00b9e0;   /* Bleu un peu plus dense */
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3); /* Effet de lueur néon */
+}
+
+/* ==========================================================================
+   6. OPTIMISATION POUR SMARTPHONE (Media Queries)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    main, .notifications-panel {
+        margin: 20px auto;
+    }
+    
+    h2 {
+        font-size: 24px;         /* Titre plus petit sur téléphone */
+    }
+    
+    .announcement-card {
+        padding: 20px;           /* Moins d'espace interne pour gagner de la place */
+    }
+    
+    .btn-install {
+        width: 100%;             /* Le bouton prend toute la largeur sur smartphone */
+        justify-content: center; /* Centre le texte dans le bouton */
+    }
+}

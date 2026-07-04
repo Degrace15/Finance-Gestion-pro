@@ -1,0 +1,64 @@
+:root {
+            --primary: #4f46e5; --secondary: #1e293b; --bg: #f1f5f9; --white: #ffffff;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; 
+            display: flex; flex-direction: column; color: var(--secondary);
+        }
+
+        /* --- SIDEBAR MOBILE (OVERLAY) --- */
+        .sidebar { 
+            width: 280px; background: var(--secondary); height: 100vh; color: white; 
+            position: fixed; left: -280px; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            z-index: 2000; box-shadow: 10px 0 15px rgba(0,0,0,0.1);
+        }
+        .sidebar.active { left: 0; }
+        
+        .sidebar-header { padding: 30px 20px; text-align: center; font-weight: 800; font-size: 22px; border-bottom: 1px solid #334155; }
+        .menu-links { list-style: none; padding: 20px 0; margin: 0; }
+        .menu-links li a { display: block; padding: 18px 25px; color: #cbd5e1; text-decoration: none; font-size: 16px; }
+        .menu-links li a:active { background: #334155; }
+
+        /* --- MAIN CONTENT --- */
+        .main-content { width: 100%; min-height: 100vh; padding-bottom: 50px; }
+
+        .top-bar { 
+            display: flex; align-items: center; justify-content: space-between;
+            background: var(--white); padding: 15px 20px; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        #burger-menu { font-size: 24px; cursor: pointer; color: var(--primary); }
+
+        /* --- CARDS (Optimisées Mobile) --- */
+        .container { padding: 15px; }
+        .stats-grid { 
+            display: grid; grid-template-columns: 1fr 1fr; /* 2 colonnes sur mobile */
+            gap: 12px; margin-bottom: 20px; 
+        }
+        
+        .card { 
+            background: var(--white); padding: 15px; border-radius: 12px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04); border: 1px solid #e2e8f0;
+        }
+        .card.full-width { grid-column: span 2; border-left: 4px solid var(--primary); }
+
+        .card h3 { margin: 0; font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: 600; }
+        .card .value { font-size: 22px; font-weight: 700; margin-top: 5px; }
+        .card i { float: right; color: var(--primary); opacity: 0.2; font-size: 20px; }
+
+        /* --- CHARTS --- */
+        .chart-box { 
+            background: var(--white); padding: 15px; border-radius: 12px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04); margin-bottom: 15px;
+            height: 300px;
+        }
+        .chart-title { font-size: 14px; font-weight: 600; margin-bottom: 15px; display: block; }
+
+        /* Overlay gris quand menu ouvert */
+        .overlay { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.5); z-index: 1500; 
+        }
+        .overlay.active { display: block; }

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="shortcut icon" href="world.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/faq.css">
+      <script>
+        if(!navigator.onLine) {
+            localStorage.setItem('page_avant', window.location.href);
+            window.location.replace('offline.html');
+        }
+
+        window.addEventListener('offline', () => {
+            localStorage.setItem('page_avant', window.location.href);
+            window.location.replace('offline.html');
+        });
+
+        setInterval(() => {
+            if(!navigator.onLine) {
+                localStorage.setItem('page_avant', window.location.href);
+                window.location.replace('offline.html');
+            }
+        }, 2000);
+    </script>
+</head>
+<body>
+    <div class="glass-container">
+        <h1>Foire Aux Questions</h1>
+        
+        <details>
+            <summary>Qu'est-ce que Finance-Gestion-Pro et en quoi révolutionne-t-il la gestion locale ?</summary>
+            <p>
+                Finance-Gestion-Pro est une solution technologique de pointe conçue par l'entreprise Blue World 
+                pour répondre aux défis structurels rencontrés par les entrepreneurs au Congo-Brazzaville. 
+                Contrairement aux méthodes de gestion traditionnelles basées sur des registres papier ou des 
+                tableurs complexes souvent sources d'erreurs, notre plateforme offre une centralisation totale 
+                de vos données commerciales. 
+            </p>
+            <p>
+                En intégrant des algorithmes de suivi en temps réel, elle permet aux gérants de PME de visualiser 
+                instantanément l'état de leur trésorerie, la rotation de leurs stocks et la performance de leurs ventes. 
+                Notre mission est de transformer chaque boutique ou startup en une entité numérique structurée, 
+                capable de prendre des décisions basées sur des chiffres précis et non sur des approximations.
+            </p>
+        </details>
+
+        <details>
+            <summary>Comment se déroule la transition après la période d'essai gratuite de 3 jours ?</summary>
+            <p>
+                La période d'essai de 72 heures est conçue pour offrir une immersion complète sans aucune restriction 
+                fonctionnelle, vous permettant de tester la robustesse de nos outils dans les conditions réelles 
+                de votre activité. À l'issue de ces trois jours, l'accès aux tableaux de bord est temporairement suspendu, 
+                mais soyez rassuré : aucune de vos données n'est supprimée de nos serveurs sécurisés.
+            </p>
+            <p>
+                Nous avons mis en place un système de sauvegarde persistante qui conserve l'intégralité de votre 
+                inventaire et de votre historique de transactions. Dès que vous activez l'un de nos forfaits via 
+                Mobile Money, votre espace de travail est instantanément déverrouillé, vous permettant de reprendre 
+                votre gestion exactement là où vous l'aviez laissée.
+            </p>
+        </details>
+
+        <details>
+            <summary>Quelle est la politique de sécurité et de confidentialité des données financières ?</summary>
+            <p>
+                La sécurité des informations sensibles est le socle sur lequel repose la confiance entre Blue World 
+                et ses partenaires. Pour garantir une protection optimale, nous utilisons des protocoles de chiffrement 
+                SSL de haut niveau qui sécurisent chaque échange de données entre votre terminal mobile et notre infrastructure.
+            </p>
+            <p>
+                Chaque compte client bénéficie d'un environnement de stockage hermétique et isolé, interdisant toute 
+                fuite ou croisement de données entre différentes entreprises. De plus, notre politique de confidentialité 
+                est stricte : aucun membre de notre équipe n'est autorisé à consulter vos chiffres privés. Vous restez 
+                le propriétaire unique et souverain de vos informations financières.
+            </p>
+        </details>
+        
+        <details>
+          <summary>Comment le système de paiement local garantit-il la rapidité de l'activation ?</summary>
+          <p>
+              Pour s'aligner sur les habitudes de consommation et les réalités financières du Congo, nous avons fait 
+              le choix stratégique de ne pas imposer de cartes bancaires internationales. Nous avons intégré un moyen de paiement d'origine
+               via MTN Mobile Money (+242 061714780) ou Airtel Money (+242 044774122) pour plus de proximité.
+               
+               Les transfert par worldRemit et Western Union sont accepter via ses même numéro de téléphone
+          </p>
+          <p>
+              Une fois votre transfert effectué vers nos comptes professionnels certifiés, notre interface de gestion 
+              administrative reçoit une notification. Grâce à une vérification croisée effectuée par nos services 
+              en une durée de 24h, votre abonnement est prolongé pour une durée de 30 jours, éliminant les 
+              délais bancaires traditionnels et les interruptions de service.
+          </p>
+        </details>
+
+        <details>
+          <summary>Quelles sont les conditions réelles pour rejoindre l'équipe de Blue World ?</summary>
+          <p>
+              Rejoindre Blue World en tant que collaborateur est un processus sélectif qui vise à maintenir l'excellence 
+              de nos services technologiques. Nous ne recherchons pas seulement des diplômes, mais des talents capables 
+              de démontrer une expertise technique concrète et une capacité d'adaptation aux méthodes agiles.
+          </p>
+          <p>
+              Chaque candidat doit soumettre un dossier comprenant des pièces d'identité légales et des preuves de 
+              réalisations passées. Le recrutement se déroule en plusieurs étapes : un test technique rigoureux suivi 
+              d'un entretien de culture d'entreprise. Pour les développeurs, nous exigeons une maîtrise parfaite des 
+              environnements mobiles et des architectures de bases de données.
+          </p>
+        </details>
+        
+        <details>
+  <summary>Le logiciel est-il utilisable en mode hors ligne (sans connexion) ?</summary>
+  <p>
+      Non, Finance-Gestion-Pro n'est pas utilisable en mode hors ligne. Ce choix technique a été fait 
+      par l'équipe de Blue World pour garantir la sécurité absolue de votre comptabilité. 
+      En exigeant une connexion, nous nous assurons que chaque opération effectuée est immédiatement 
+      transmise et sauvegardée sur nos serveurs sécurisés (Cloud) plutôt que de rester stockée 
+      uniquement dans la mémoire de votre téléphone.
+  </p>
+  <p>
+      Cette synchronisation obligatoire avec nos serveurs d'hébergement est votre meilleure protection : 
+      si votre smartphone tombe en panne, est volé ou égaré, vos données financières restent intactes 
+      et accessibles depuis n'importe quel autre appareil. Pour faciliter votre utilisation au quotidien, 
+      le site a été optimisé pour consommer très peu de données mobiles, vous permettant de travailler 
+      sans interruption, même avec une connexion internet faible.
+  </p>
+</details>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos | Finance-Gestion-Pro</title>
+    <link rel="shortcut icon" href="world.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/prop.css">
+      <script>
+        if(!navigator.onLine) {
+            localStorage.setItem('page_avant', window.location.href);
+            window.location.replace('offline.html');
+        }
+
+        window.addEventListener('offline', () => {
+            localStorage.setItem('page_avant', window.location.href);
+            window.location.replace('offline.html');
+        });
+
+        setInterval(() => {
+            if(!navigator.onLine) {
+                localStorage.setItem('page_avant', window.location.href);
+                window.location.replace('offline.html');
+            }
+        }, 2000);
+    </script>
+</head>
+<body>
+
+    <main>
+        <section id="about">
+            <div class="about-container">
+                <h1>À propos de <span>Finance-Gestion-Pro</span></h1>
+                
+                <p>
+                    Finance-Gestion-Pro est bien plus qu'une simple application de comptabilité ; c'est une 
+                    révolution numérique pensée spécifiquement pour les commerçants, les entrepreneurs et 
+                    les petites entreprises du Congo. Face aux défis croissants de la gestion manuelle et 
+                    des risques d'erreurs humaines, nous avons bâti une solution robuste capable de 
+                    digitaliser l'intégralité de vos flux commerciaux en quelques clics.
+                </p>
+
+                <p>
+                    L'objectif premier de Finance-Gestion-Pro est d'offrir une visibilité totale sur la 
+                    santé financière de votre activité. Grâce à une interface intuitive et des outils de 
+                    suivi de stock en temps réel, le logiciel permet de prévenir les ruptures, de suivre 
+                    chaque vente avec précision et de calculer vos bénéfices nets sans effort. Cette 
+                    automatisation libère un temps précieux, vous permettant de vous concentrer 
+                    pleinement sur l'expansion de votre business.
+                </p>
+
+                <p>
+                    La sécurité et la fiabilité sont au cœur de notre conception. En utilisant une 
+                    architecture connectée au cloud, Finance-Gestion-Pro garantit que vos informations 
+                    les plus sensibles sont protégées contre les pannes matérielles ou les pertes de 
+                    smartphones. C'est cet engagement envers l'innovation et la protection de vos données 
+                    qui fait de notre logiciel le partenaire de confiance indispensable pour toute PME 
+                    souhaitant s'imposer durablement sur le marché congolais.
+                </p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+ :root { --accent: #d4af37; --bg: #111; --card: #1a1a1a; }
+        body { background: var(--bg); color: #ccc; margin: 0; font-family: 'Segoe UI', sans-serif; }
+        .burger-menu { position: fixed; top: 15px; left: 15px; z-index: 9999; background: var(--accent); color: #111; width: 45px; height: 45px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .main-content { padding: 20px; transition: 0.3s; min-height: 100vh; box-sizing: border-box; }
+        @media (max-width: 768px) { .main-content { padding-top: 70px; } .sidebar { left: -260px; position: fixed; z-index: 8888; height: 100vh; transition: 0.3s; } .sidebar.active { left: 0; } }
+        .box-vente { background: var(--card); padding: 20px; border-radius: 12px; border: 1px solid #333; margin-top: 15px; }
+        .form-row { display: flex; gap: 10px; margin-bottom: 10px; }
+        .form-group { flex: 1; }
+        label { display: block; margin-bottom: 5px; color: #888; font-size: 0.75em; font-weight: bold; }
+        input, select { width: 100%; padding: 12px; background: #222; border: 1px solid #444; border-radius: 8px; color: white; box-sizing: border-box; }
+        .btn-vendre { width: 100%; padding: 14px; background: var(--accent); border: none; border-radius: 8px; font-weight: bold; cursor: pointer; color: #111; margin-top: 10px; }
+        .btn-vendre:disabled { background: #333; color: #666; cursor: not-allowed; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: var(--card); border-radius: 12px; overflow: hidden; }
+        th { color: var(--accent); text-align: left; padding: 15px; border-bottom: 2px solid #333; font-size: 0.85em; }
+        td { padding: 15px; border-bottom: 1px solid #222; font-size: 0.9em; }
+        .cat-badge { background: #222; padding: 4px 8px; border-radius: 5px; font-size: 0.75em; color: var(--accent); border: 1px solid #333; }
+        .alert { padding: 15px; border-radius: 8px; margin-bottom: 15px; font-weight: bold; }
+        .success { background: rgba(0, 255, 0, 0.1); color: #00ff00; border: 1px solid #00ff00; }
+        .error { background: rgba(255, 0, 0, 0.1); color: #ff0000; border: 1px solid #ff0000; }
+        .fa-infinity { font-size: 1.2em; vertical-align: middle; }

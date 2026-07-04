@@ -1,0 +1,181 @@
+/* --- VARIABLES DE COULEURS --- */
+:root {
+    --bg-dark: #0B1F3A;
+    --sidebar-bg: #0B1F3A;
+    --gold: #00d4ff;
+    --gold-light: #00d4ff;
+    --text-white: #ffffff;
+    --text-gray: #888888;
+    --card-bg: #111111;
+    --border: rgba(212, 175, 55, 0.2);
+}
+
+/* --- STRUCTURE GÉNÉRALE --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR (BARRE LATÉRALE) --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header h2 {
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu li i {
+    margin-right: 15px;
+}
+
+.sidebar-menu li:hover, .sidebar-menu li.active {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+    border-left: 4px solid var(--gold);
+}
+
+/* --- CONTENU PRINCIPAL --- */
+.main-content {
+    margin-left: 260px; /* Laisse la place pour la sidebar */
+    padding: 40px;
+    flex: 1;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.welcome-text h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.welcome-text span {
+    color: var(--gold);
+}
+
+/* --- CARTES DE STATISTIQUES --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.stat-card h3 {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin: 0 0 10px 0;
+}
+
+.stat-card .value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-white);
+}
+
+.stat-card .trend {
+    font-size: 0.8rem;
+    color: #00ff00; /* Vert pour les gains */
+    margin-top: 5px;
+}
+
+/* --- TABLEAUX ET SECTIONS --- */
+.data-section {
+    background-color: var(--sidebar-bg);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+}
+
+.data-section h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    color: var(--text-gray);
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+    .sidebar-header h2, .sidebar-menu li span {
+        display: none;
+    }
+    .main-content {
+        margin-left: 70px;
+    }
+}

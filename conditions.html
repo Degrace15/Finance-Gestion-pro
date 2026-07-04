@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Conditions - F&G Pro</title>
+    <link rel="shortcut icon" href="world.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/condi.css">
+</head>
+  <script>
+        if(!navigator.onLine) {
+            localStorage.setItem('page_avant', window.location.href);
+            window.location.replace('offline.html');
+        }
+
+        window.addEventListener('offline', () => {
+            localStorage.setItem('page_avant', window.location.href);
+            window.location.replace('offline.html');
+        });
+
+        setInterval(() => {
+            if(!navigator.onLine) {
+                localStorage.setItem('page_avant', window.location.href);
+                window.location.replace('offline.html');
+            }
+        }, 2000);
+    </script>
+<body>
+
+<div class="container">
+    <h1>Conditions Générales d'Utilisation</h1>
+
+    <h2>1. Engagement et Responsabilité</h2>
+    <p>
+        L'utilisation de la plateforme F&G Pro constitue un engagement formel de votre part à respecter les normes 
+        de gestion commerciale établies. En tant qu'utilisateur, vous êtes le seul garant de la véracité des 
+        données que vous injectez dans votre espace de travail. 
+    </p>
+    <p>
+        Notre rôle se limite à fournir un outil technique performant pour le suivi de vos inventaires, ventes et dépenses. 
+        Aucune réclamation ne pourra être retenue contre notre équipe technique pour des erreurs de saisie.
+    </p>
+
+    <h2>2. Gestion des Quotas et Abonnements</h2>
+    <p>
+        Le fonctionnement de notre application est optimisé par des quotas stricts selon le plan souscrit. 
+        Chaque utilisateur est tenu de respecter les limites d'insertion propres à son niveau d'accès. 
+    </p>
+    <p>
+        Le dépassement de ces seuils techniques entraîne une suspension automatisée des fonctionnalités de saisie 
+        jusqu'à la régularisation de votre statut d'abonnement ou le passage à un plan supérieur.
+    </p>
+
+    <h2>3. Confidentialité des Données</h2>
+    <p>
+        La souveraineté de vos données financières demeure notre priorité absolue. Vos chiffres d'affaires, 
+        le détail de vos stocks ainsi que le montant de vos dépenses sont stockés dans un environnement 
+        sécurisé par chiffrement. 
+    </p>
+    <p>
+        Nous nous engageons à n'effectuer aucune exploitation commerciale de vos données brutes. En contrepartie, 
+        la sécurité de votre accès dépend directement de la prudence dont vous faites preuve.
+    </p>
+
+    <h2>4. Maintenance du Service</h2>
+    <p>
+        F&G Pro est une solution en évolution constante. Des phases de maintenance peuvent être programmées 
+        pour améliorer la robustesse du système. L'utilisateur accepte que le service puisse être temporairement 
+        indisponible sans préavis majeur.
+    </p>
+
+    <div class="footer-note">
+        F&G Pro - Version Mobile 2026.04<br>
+        Optimisé pour smartphone 6.7"
+    </div>
+</div>
+
+</body>
+</html>

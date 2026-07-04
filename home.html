@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil | Finance-Gestion-Pro</title>
+    <link rel="shortcut icon" href="world.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/acc.css">
+      <script>
+        if(!navigator.onLine) {
+            localStorage.setItem('page_avant', window.location.href);
+            window.location.replace('offline.html');
+        }
+
+        window.addEventListener('offline', () => {
+            localStorage.setItem('page_avant', window.location.href);
+            window.location.replace('offline.html');
+        });
+
+        setInterval(() => {
+            if(!navigator.onLine) {
+                localStorage.setItem('page_avant', window.location.href);
+                window.location.replace('offline.html');
+            }
+        }, 2000);
+    </script>
+</head>
+<body>
+
+    <main>
+        <section class="hero">
+            <h1>Gérez votre business comme un <span>Professionnel</span></h1>
+            
+            <p>
+                Finance-Gestion-Pro n'est pas qu'un simple outil de calcul, c'est le partenaire stratégique 
+                de votre croissance. Développée par l'entreprise Blue World, notre plateforme offre 
+                une solution complète pour digitaliser les opérations quotidiennes des PME au Congo. 
+                Que vous soyez à Brazzaville ou à Pointe-Noire, accédez à une gestion simplifiée.
+            </p>
+            
+            <p>
+                Grâce à notre architecture basée sur le Cloud, toutes vos données financières et vos 
+                inventaires sont synchronisés en temps réel. Cela vous permet de garder un œil critique 
+                sur la rentabilité de votre commerce, même lorsque vous n'êtes pas sur place, 
+                garantissant ainsi une transparence totale et une sécurité inégalée de vos chiffres.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="auth.php" class="btn-primary">Commencer l'essai gratuit</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="card">
+                <h3>📦 Gestion des Stocks</h3>
+                <p>
+                    Oubliez les ruptures de stock imprévues qui font fuir vos clients. Notre système suit 
+                    chaque article en temps réel et vous alerte dès qu'un produit atteint un niveau critique. 
+                    Optimisez vos commandes et réduisez vos pertes grâce à un inventaire automatisé précis.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💰 Suivi Financier</h3>
+                <p>
+                    Maîtrisez vos flux de trésorerie avec une clarté absolue. Enregistrez chaque vente, 
+                    suivez vos dépenses opérationnelles et générez des rapports de bénéfices quotidiens. 
+                    Prenez des décisions basées sur des faits réels pour faire passer votre PME au niveau supérieur.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📱 Mobilité Totale</h3>
+                <p>
+                    Votre entreprise tient désormais dans votre poche. Conçu avec une approche Mobile First, 
+                    Finance-Gestion-Pro est optimisé pour fonctionner parfaitement sur smartphone. 
+                    Consultez vos statistiques de vente en déplacement sans jamais perdre le fil de votre business.
+                </p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

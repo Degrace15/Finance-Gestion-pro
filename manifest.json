@@ -1,0 +1,16 @@
+{
+  "name": "Finance & Gestion Pro",
+  "short_name": "Finance & Gestion pro",
+  "description": "Gestion de stocks,ventes et dépenses",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0B1A3",
+  "theme_color": "#3498db",
+  "icons": [
+    {
+      "src": "world.jpg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

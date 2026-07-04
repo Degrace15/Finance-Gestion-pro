@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Finance & Gestion</title>
+    <link rel="shortcut icon" href="world.jpg" type="image/x-icon">
+    <meta name="description" content="Gérez votre comptabilité et votre inventaire avec Finance & Gestion. La solution de gestion financière n°1 à Brazzaville pour PME et Startups.">
+    <meta name="keywords" content="Gestion, Comptabilité, PME Congo, Startup Brazzaville, Finance & Gestion, Logiciel Business">
+    <meta name="author" content="Finance & Gestion">
+
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script>
+    // Vérifie internet
+    if(!navigator.onLine) {
+        localStorage.setItem('page_avant', window.location.href);
+        window.location.replace('offline.html');
+    }
+
+    window.addEventListener('offline', () => {
+        localStorage.setItem('page_avant', window.location.href);
+        window.location.replace('offline.html');
+    });
+
+    setInterval(() => {
+        if(!navigator.onLine) {
+            localStorage.setItem('page_avant', window.location.href);
+            window.location.replace('offline.html');
+        }
+    }, 2000);
+</script>
+</head>
+<body>
+
+    <nav id="main-nav">
+        <div id="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <ul id="menu-links">
+            <div id="close-menu">&times;</div>
+            <li><a href="home.html" data-key="nav_home">Accueil</a></li>
+            <li><a href="à propos.html" data-key="nav_about">À Propos</a></li>
+            <li><a href="faq.html" data-key="nav_faq">FAQ</a></li>
+            <li><a href="conditions.html" data-key="nav_terms">Conditions d'utilisations</a></li>
+            <li><a href="contact.php" data-key="nav_contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <main id="app">
+
+       <section id="home" class="active">
+            <div class="home-container">
+                
+                <div class="home-image">
+                    <img src="/images/Business.jpg" alt="Business">
+                </div>
+
+                <div class="home-content">
+                    <h1 data-key="home_title">Finance & Gestion pro</h1>
+                    
+                    <p data-key="home_desc">
+                        Finance-Gestion-Pro représente une avancée technologique majeure pour l'écosystème 
+                        entrepreneurial du Congo-Brazzaville. Développée avec passion par l'entreprise 
+                        Blue World, cette plateforme a été conçue pour briser les barrières de la gestion 
+                        traditionnelle et offrir aux PME locales un outil à la hauteur des standards 
+                        internationaux, tout en respectant les réalités de notre marché.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="apropos">
+            <h2 data-key="about_title">À Propos</h2>
+        </section>
+
+        <section id="faq">
+            <h2 data-key="faq_title">Foire Aux Questions</h2>
+        </section>
+
+        <section id="contact">
+            <h2 data-key="contact_title">Contactez-nous</h2>
+        </section>
+
+        <section id="conditions">
+            <h2 data-key="terms_title">Conditions d'utilisation</h2>
+        </section>
+
+        <section id="maintenance">
+            <h2 data-key="maint_title">Site en maintenance</h2>
+            <p data-key="maint_desc">Nous préparons des nouveautés pour vous.</p>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+   
+</body>
+</html>

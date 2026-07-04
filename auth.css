@@ -1,0 +1,177 @@
+/* --- CONFIGURATION DES COULEURS BLUE WORLD --- */
+:root {
+    --primary-blue: #0056b3;
+    --dark-night: #0a192f; /* Bleu nuit équilibré */
+    --royal-blue: #112240;
+    --glass-bg: rgba(255, 255, 255, 0.88); /* Transparence légère */
+    --text-dark: #1f2937;
+    --error-red: #ff4d4d;
+}
+
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+body {
+    /* Arrière-plan bleu de nuit pas trop sombre */
+    background: radial-gradient(circle at center, #112240 0%, #0a192f 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- CARTES DE FORMULAIRE (Légèrement Transparentes) --- */
+.auth-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px); /* Effet de flou derrière le formulaire */
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideUp 0.6s ease-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- LOGO ET TITRE --- */
+.logo-area {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo-area img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-blue);
+    margin-bottom: 12px;
+}
+
+.logo-area h2 {
+    color: var(--dark-night);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* --- SECTIONS ET ÉTAPES --- */
+.form-section {
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 15px;
+}
+
+.form-section h3 {
+    font-size: 13px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.step {
+    background: var(--primary-blue);
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+/* --- CHAMPS DE SAISIE --- */
+.input-row, .phone-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.phone-input select {
+    flex: 0 0 95px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+    outline: none;
+}
+
+/* --- BOUTON PRINCIPAL --- */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: var(--dark-night);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+/* --- TOGGLE (Lien vers Connexion/Inscription) --- */
+.toggle-area {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.toggle-btn {
+    color: var(--primary-blue);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.toggle-btn:hover {
+    text-decoration: underline;
+}
+
+/* --- TOAST ERROR (Message d'alerte) --- */
+.toast-error {
+    position: fixed;
+    top: 25px;
+    background: var(--error-red);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 1000;
+}

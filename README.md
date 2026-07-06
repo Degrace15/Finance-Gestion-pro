@@ -158,7 +158,7 @@ finance-gestion/
 ### Paiement
 - MTN Mobile Money : +242 061 714 780
 - Airtel Money : +242 044 774 122
-- Activation automatique via API
+- Activation via admin 
 
 ---
 
